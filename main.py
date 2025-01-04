@@ -4,6 +4,7 @@ from time import time
 pygame.init()
 window=pygame.display.set_mode((500,500))
 background_image = pygame.image.load("images/background.png")
+window.blit(background_image, (0, 0))
 
 clock=pygame.time.Clock()
 
@@ -49,6 +50,7 @@ platform.draw_sprite()
 
 monsters = []
 
+
 y = 0
 for j in range(3):
     x=5+ 28*j
@@ -56,7 +58,7 @@ for j in range(3):
         monster=Sprite("images/monster.png", x, y, 50, 50)
         monsters.append(monster)
         x+=55
-        y+=55
+    y+=55
 
 move_right = False
 move_left = False
@@ -103,7 +105,7 @@ while True:
     if len(monsters) == 0:
         win = Label(0, 0, 500, 500, (0, 255, 0))
         win.set_text("YOU WON!", 50, (0, 0, 0))
-        win.draw_all(200, 200)
+        win.draw_all(100, 200)
         pygame.display.update()
         pygame.time.delay(2000)
         break
@@ -125,7 +127,7 @@ while True:
     for monster in monsters:
         monster.draw_sprite()
 
-    window.blit(background_image, (0, 0))
+
     platform.draw_sprite()
     ball.draw_sprite()
     pygame.display.update()
