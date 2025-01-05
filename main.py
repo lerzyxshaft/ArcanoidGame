@@ -1,6 +1,7 @@
 import pygame
-
 from time import time
+from tkinter import Button
+
 pygame.init()
 window=pygame.display.set_mode((500,500))
 background_image = pygame.image.load("images/background.png")
@@ -41,6 +42,12 @@ class Sprite(Area):
 
     def draw_sprite(self):
         window.blit(self.image, (self.rect.x, self.rect.y))
+
+class Diy(Area):
+    win = Label(0, 0, 500, 500, (255, 0, 0))
+    win.set_text("Choose difficulty level", 50, (255, 255, 255))
+    btn = button()
+    pygame.display.update()
 
 ball = Sprite("images/ball.png", 250, 250 ,30 ,30)
 ball.draw_sprite()
