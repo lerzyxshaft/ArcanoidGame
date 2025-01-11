@@ -147,14 +147,16 @@ while True:
         win.draw_all(100, 200)
         pygame.display.update()
         pygame.time.delay(2000)
-        break
+        difficulty_screen()
+
     if ball.rect.y > platform.rect.y:
         win = Label(0, 0, 500, 500, (255, 0, 0))
         win.set_text("YOU LOSE;(", 50, (255, 255, 255))
         win.draw_all(100, 200)
         pygame.display.update()
         pygame.time.delay(2000)
-        break
+        difficulty_screen()
+
 
     ball.rect.x += speed_x
     ball.rect.y += speed_y
